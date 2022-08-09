@@ -30,14 +30,22 @@ export default function App(){
         <main>
             <h2>CYNTHIA'S ARRIVEL IN HAMBURG:</h2>
             <div id="timerDiv">
-                <h1>{timeLeft.days}</h1>
-                <h2>days</h2>
-                <h1>{timeLeft.hours}</h1>
-                <h2>hours</h2>
-                <h1>{timeLeft.minutes}</h1>
-                <h2>minutes</h2>
-                <h1>{timeLeft.seconds}</h1>
-                <h2>seconds</h2>
+                <section>
+                    <h1>{timeLeft.days}</h1>
+                    <h2>days</h2>
+                </section>
+                <section>
+                    <h1>{timeLeft.hours}</h1>
+                    <h2>hours</h2>
+                </section>
+                <section>
+                    <h1>{timeLeft.minutes}</h1>
+                    <h2>minutes</h2>
+                </section>
+                <section>
+                    <h1>{timeLeft.seconds}</h1>
+                    <h2>seconds</h2>  
+                </section>
             </div>
             <div id="imgDiv">
                 <img src={img} alt="not Found" />  
