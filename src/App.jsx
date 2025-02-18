@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function App(){
     let [dateNow,setDateNow]=useState(new Date())
-    const targetDate=new Date(2022,8,24,11,35)
+    const targetDate=new Date(2022,9,26,18,41)
     console.log(targetDate);
     let toWait=targetDate-dateNow
     const [index, setIndex]=useState(1);
