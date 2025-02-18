@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 export default function App(){
     let [dateNow,setDateNow]=useState(new Date())
     const targetDate=new Date(2022,9,26,18,41)
-    console.log(targetDate);
-    let toWait=targetDate-dateNow
+    // console.log(targetDate);
+    let toWait=dateNow-targetDate
     const [index, setIndex]=useState(1);
     function calcTime(){
         setDateNow(new Date())
@@ -20,7 +20,9 @@ export default function App(){
         return () => clearInterval(timer);
     })
     let timeLeft = {
-        days:Math.floor(toWait/(1000*60*60*24)),
+        years:Math.floor(toWait/(1000*60*60*24*365)),
+        months:Math.floor(toWait/(1000*60*60*24)%12),
+        days:Math.floor(toWait/(1000*60*60*24)%12),
         hours:Math.floor(toWait/(1000*60*60)%24),
         minutes:Math.floor(toWait/(1000*60)%60),
         seconds:Math.floor(toWait/(1000)%60),
@@ -28,8 +30,16 @@ export default function App(){
 
     return (
         <main>
-            <h2>CYNTHIA'S ARRIVEL IN HAMBURG:</h2>
+            <h2>UNITED WITH CYNTHIA SINCE:</h2>
             <div id="timerDiv">
+                <section>
+                    <h1>{timeLeft.years}</h1>
+                    <h2>years</h2>
+                </section>
+                <section>
+                    <h1>{timeLeft.months}</h1>
+                    <h2>months</h2>
+                </section>
                 <section>
                     <h1>{timeLeft.days}</h1>
                     <h2>days</h2>
